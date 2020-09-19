@@ -308,3 +308,244 @@ git commit -m "Quick exercise -->$(date)"
 cd ~
 ls -a
 cp ~/.history ~/Repos/command_line_masterDS
+cd Repos/command_line_masterDS
+ls -a
+git add -u
+git commit -m "Quick exercise -->$(date)"
+echo 'vamo a usar alias'
+ll
+cd ~
+alias
+echo 'sirva para hacer shorcuts'
+alias gl='git log'
+gl
+cd first_dir
+gl
+cd ~
+cd Repos/command_line_masterDS
+gl
+alias gc='git commit -m'
+echo 'estos alias solo funcionan en esta sesion de "shared"'
+exit
+gl
+echo 'para que aparezca siempre, y no se borre cuando lo cerramos, hay que tocar un fichero'
+gedit .zshrc
+cp .zshrc .zshrc.backup
+gedit .zshrc
+gl
+which ll
+which cd
+echo 'para ver que tipo es cada comando, con which'
+which git
+echo 'para ver la version de python'
+which python
+whereis python
+echo 'sudo es super user'
+sudo which python
+echo 'el terminal es un editor de texto, porque meintras estamos escribiendo podemos cambiar cosas' 
+echo 'usar alt+b para movernos por Las Palabras, alt+c es capitalizar las letras, alt+u es para hacer todas mayusculas, etc'
+echo 'ALT+U'
+echo 'para salir del terminal sin exit, en una linea vacia ctrl+D'
+echo 'ctrl+l es para clear'
+echo 'ver mas shorcuts en la hoja de chuleta'
+echo 'ctrl+r es block search'
+echo 'ctrl+r busca el ultimo comando con el termino buscado'
+echo 'autocomplete lo hace dependiendo del contexto'
+'\
+\
+'
+echo 'autocomplete es al tabulador'
+cd Data/opentraveldata
+ll
+head optd_aircraft.csv
+echo 'el delimitador sera ^'
+echo 'head da los primeros registros, como en R, pero cat te muestra todo el fichero'
+echo 'en head se eseñan 10 lineas por default, pero se pueden poner las que quieras'
+head -n 3 optd_aircraft.csv
+head -n -3 optd_
+head -n -3 optd_aircraft.csv
+echo 'con esto lo que hacemos es que nos van a enseñar todas las lineas excepto las tres primeras'
+echo 'tail es igual que head pero al contrario, empezando desde abajo'
+wc optd_aircraft.csv
+echo 'wc nos dice que tiene 458 lineas, 1068 palabras y el numro de batch es 18612'
+echo 'si solo quiero ver el num de palarbas es wc -w'
+wc -w optd_aircraft.csv
+cat optd_aircraft.csv
+echo 'wc es word count'
+cat optd_aircraft.csv | wc 
+echo ' | esto sirve para anidar comandos, se puede hacer siempre que se este trabajando con texto'
+echo 'como vemos, en este segundo metodo de wc no sale el nombre del fichero, porque al pasarlo por cat antes, el wc ya no sabe de donde viene el texto. En cat se llama a la funcion y se da como parametro el fichero, y en el wc le hemos dado como parametro la salida d eun funcion, no un fichero'
+cat optd_aircraft.csv | wc | wc
+cat optd_aircraft.csv | wc | wc | wc -w
+cat optd_aircraft.csv | wc | wc | wc -w | wc
+echo 'queremos el tamaño de las primeras 3 lineas'
+head -3 optd_aircraft.csv | wc
+head -3 optd_aircraft.csv
+head -8 optd_aircraft.csv | tail -1
+echo 'anidando head y tail podemos coger la linea de codigo que queramos, en este caso la linea 8'
+cat -n optd_aircraft.csv 
+cat -n optd_aircraft.csv | head -8
+tail -1
+cat -n optd_aircraft.csv | head -8 | tail -1
+cat ~/.history
+echo 'para redireccionar la salida en vez de que se muestre en pantalla, que vaya a un fichero es con ">"'
+echo Test >test_file
+cat test_file
+which test_file
+echo Test2 >test_file
+echo 'se sobreescribe el fichero'
+cat test_file
+echo 'para añadir la info y no sobreescribir es asi'
+echo Test3 >>test_file
+cat test_file
+ll
+echo 'podemos redireccionar tambien la entrada'
+<test_file wc
+echo 'esto no se usa mucho'
+wc test_file
+cat -n optd_aircraft.csv | head -8 | tail -1
+cat -n optd_aircraft.csv | head -8 | tail -1 | -1 >line_num8.csv
+cat -n optd_aircraft.csv | head -8 | tail -1 |  >line_num8.csv
+ll
+cat line_num8.csv
+echo "content utilities-quick exercises'\
+\
+'\
+"
+echo "2."
+echo "How many words do first 5 lines of the Finn.txthave?"
+ç
+cd ~/Data/shell
+head 5 Finn.txt | wc -w
+head -n 5 Finn.txt | wc -w
+head -n 3 Text_example.txt | cat n
+cat --help
+head -n 3 Text_example.txt | cat -n
+head -n 5 Finn.txt | wc -w
+head -n 3 Text_example.txt | cat -n
+echo 'guardad los ultimo 20 comandos en un fichero distinto'
+tail -20 ~/.history >last_20_lines
+cat last_20_lines
+echo 'File utilities - Quick Exercises'
+echo 'find: buscar'
+find 
+find .
+cd ñ
+cd ~
+find ~/repos/
+find ~/Repos
+find ~/Repos | wc
+find ~/Repos/command_line_masterDS | wc
+find . -name "text_file"
+echo 'ha intentado entrar en dos directioes donde se le han denegado los permisos'
+find -name "tExt_file*" 
+find -iname "tExt_file" 
+find -iname "tExt_file*" 
+find -iname "tExt_file*" -perm 777
+find -iname "tExt_file*" ! -perm 777
+echo ' ! se usa para decir que NO quieres esa condicion, p.e. devuelveme los archivos que NO tienen permisos 777'
+echo 'se pueden buscar los ficheros vacios' 
+find -maxdepth 3 -empty
+find -mmin 60
+find . -mmin  60
+find . -mmin 900
+find -mmin -900
+cd Data
+find . -type f 
+find . -type f -iname ".csv*"
+find . -type f -iname "*.csv"
+find . -type f -iname "*.csv" | wc
+find . -type f -iname "*.csv" -exec echo 'FOUN ONE'
+find . -type f -iname "*.csv" -exec echo 'FOUN ONE'\;
+find . -type f -iname "*.csv" -exec echo FOUND\;
+find -iname "*.csv" -exec echo "FOUND"\;
+find -iname "*.csv" -exec echo "FOUND";
+find -iname "*.csv" -exec echo "FOUND" \;
+echo 'hay que poner \;'
+echo 'hay que poner \; para que te lo repita varias veces'
+echo this ; echo that
+echo this \; echo that
+find -iname "*.csv" -exec echo "FOUND" ; echo "ONE" \;
+find -iname "*.csv" -exec ls -l\;
+find -iname "*.csv" -exec ls -l \;
+find -iname "*.csv" -exec ls -l {} \;
+echo 'al meter las {} quiere decir que lo va a meter en esa variable\
+'
+echo 'si quitas los corchetes, cada vez que encuentre uno, va a hacer la lista de todos, si hay 6 coincidencias, te vas a encontrar la lista 6 veces completas\
+\
+, por eso, si lo metes en {} estas metiendolo en una variable'
+find -iname "*.csv" -exec ls -l {} \; -exec head 2 {} \;
+find -iname "*.csv" -exec ls -l {} \; -exec head 2 {} \; | wc
+find -iname "*.csv" -exec ls -l {} \; -exec head -n 2 {} \;
+find -iname "*.csv" -exec ls -l {} \; -exec head -n 2 {} \; | wc
+find -iname "*.csv" -exec ls -l {} \; | wc
+find -iname "*.csv" -exec ls -l {} \; | wc \;
+find -iname "*.csv" -exec zsh -c "ls -l {} \; | wc" \;
+find -iname "*.csv" -exec zsh -c "ls -l {} | wc" \;
+echo 'esto lo que hace es crear otra shell y evaluar lo que le metas en texto como formula'
+echo $0
+find -iname "*.csv" -exec zsh -c " ls -l {} | wc " \;
+ls -l
+ls -l | wc
+echo 'File utilities -Quick exercises\
+'
+echo '1.'
+find ~/ -mmin -60
+echo '2.'
+find ~/ -empty ! -perm 777
+echo '3.   no lo voy a hacer porque le daria permisos a todo el mundo dentro de mi home'
+find ~/Data -S -size
+ls  ~/Data -S
+ls -l -S ~/Data
+wc -S ~/Data
+ll -S ~/Data
+ls -l -s -S ~/Data
+ls -S ~/Data
+ls -l -S ~/Data
+ls -l -S ~/Data | head -n 3
+find ~/ -exec zsh -c "ls -l -S ~/Data  {} \; | head -n 3" \;
+find ~/ -exec zsh -c "ls -l -S ~/Data  {} | head -n 3" \;
+find ~/Data -exec zsh -c "ls -l -S {} | head -n 3" \;
+find ~/Data -exec zsh -c "ls -S {} | head -n 3" \;
+echo '4.'
+ls 
+ls airline_tickets
+ls opentraveldata
+ls shell
+ls challenge
+ls us_dot
+ls us_dot/otp/On_Time_Reporting_Carrier_On_Time_Performance_1987_present_2018_12.zip
+echo '4. hay que ejecutar en cada directorio ls -S y head -n 3. El problema viene al ejecutar'
+find ~/Data -iname="*.csv" -exec zsh -c " ls -S {} | head -n 3 " \;
+find ~/Data -iname "*.csv" -exec zsh -c " ls -S {} | head -n 3 " \;
+find ~/Data -iname "*.csv" -exec zsh -c " ls -S -l {} | head -n 3 " \;
+find ~/Data
+find ~/Data -type d 
+find ~/Data -type d -exec ls -l -S 
+find ~/Data -type d -exec ls -l -S \;
+find ~/Data -type d -exec ls {} -l -S \;
+find ~/Data -type d -exec ls {} -l -S \; head -n 3
+find ~/Data -type d -exec ls {} -l -S \; head -n 3 \;
+find ~/Data -type d -exec zsh -c "ls {} -l -S \; head -n 3" \;
+find ~/Data -type d -exec zsh -c "ls {} -l -S \;" \;
+find ~/Data -type d -exec zsh -c "ls {} -l -S \; wc | head -n 3 " \;
+find ~/Data -type d -exec zsh -c "ls {} -l -S \; wc " \;
+find ~/Data -type d -exec zsh -c "ls {} -l -S | wc " \;
+find ~/Data -type d -exec zsh -c "ls {} -l -S >top3 " \;
+top3
+cat top3
+find ~/Data -type d -exec zsh -c "ls {} -l -S " \;
+find ~/Data -type d -exec zsh -c "ls {} -l -S \; >top3 " \;
+find ~/Data -type d -exec zsh -c "ls {} -l -S \; head -n 3 " \;
+find ~/Data -type d -exec zsh -c "ls -l -S {} \; " \;
+find ~/Data -mindepth 1 -exec zsh -c "ls -l -S {} \; " \;
+find ~/Data -mindepth 1 -type d -exec zsh -c "ls -l -S {} \; " \;
+find ~/Data -mindepth 1 -type d -exec echo {} \; zsh -c "ls -l -S {} \; " \;
+find ~/Data -mindepth 1 -type d -exec echo {} \; ls -l -S {} \;
+find ~/Data -mindepth 1 -type d -exec echo {} \; ls {} -l -S \;
+find ~/Data -mindepth 1 -type d -exec  ls {} -l -S \;
+find ~/Data -mindepth 1 -type d -exec echo {} \; -exec zsh -c "ls -lSh {} | head -n 4" \;
+echo 'vamos a meterlo en el github'
+cd ~/Repos
+cd command_line_masterDS
+cp ~/.history .
