@@ -1,0 +1,234 @@
+ls
+echo $SHELL
+clear
+ls
+echo $SHELL
+whoami
+echo $HOST
+echo $TERM
+echo elena
+echo repiteloquedigo
+echo $USER
+echo $
+echo $USER
+echo "$user"
+echo "$USER"
+echo '$USER'
+echo 'comillas simples para literal $USER'
+USER_NAME=elena
+echo $USER_NAME
+date
+echo "hoy es el día `date`" 
+'las tildes se usan para evaluar lo que metas dentro'
+echo 'no se puede anidar con tildes'
+echo "en este directorio encuentro lo siguiente : $(ls)"
+"si no cierras las comilas,\
+se lo toma como salto de linea\
+\
+"
+"con ctrl + c es señal de interrupcion"
+'hola'
+echo 'la backlash \ es para caracteres especiales'
+echo "a\n"
+echo "\n es para salto de linea"
+echo "a\nb"
+echo this is echo
+echo ghola
+echo para escribir multiples comandos de lineas se usa el ;
+echo holi; date; echo adiosi
+cd Data/shell
+echo cd es para change directory
+cd /home/dsc/Data/shell
+cat Text_exmple.txt
+cat Tex_example.txt
+cd /home/dsc/Documents
+cat Text_example.txt
+cd /home/dsc/Data/shell
+cat Text_example.txt
+cat Text_example.txt Text_example.txt
+cat -n Text_example.txt
+pwd
+cd .
+cd ../
+cd ../..
+cd ..
+cd ../
+cd /home/dsc/Data/shell
+cd - 
+cd -
+cd-
+cd \home
+cd \\
+
+ls
+ls - a
+ls-a
+ls -a
+ls -l
+ls -1
+ls -s
+ls -l
+echo 'los permisos son: yo, mi grupo y el resto. Yo sería el primer dsc, el grupo seria el segundo dsc'
+echo 'los permisos se dan en gruo de tres. En este caso los tendría todos: drwx(read, writte & execute del primer ususario) rwx(permisos del grupo) -x (permisos para todo el mundo=\
+)"\
+'
+echo 'cuidado al quitar el permiso de ejecutar en un directorio porque quiere decir que NO SE VA A PODER ACCEDER AL DIRECTORIO'
+mkdir minuevofolder
+ls -ls
+mkdir holi
+touch minuevoarchivo
+ls -l
+mkdir -p level1/level2/level3
+ls level1/level2/level3
+ls -l
+echo 'NUNCA PONER rm -rf /'
+echo 'TE BORRA EL ORDENADOR COMPLETO'
+echo 'vamos a clonar archivos de un repo'
+echo 'vamos a usar el programa git, que es un control de versiones y gestionar proyectos'
+echo 'git es un repositorio de checkpoints de tu codigo'
+echo 'es util cuando tengas checkpoints regulares de tu proyecto. Partes de un repo limpio'
+git clone https://github.com/IgorAram/DS_CL_files.git
+git clone https://github.com/IgorAramb/DS_CL_files.git  
+cd DS_CL_files
+ echo 'nos aparece lo de master porque estamos en un git (en un repositorio)'
+ echo 'voy a borrar el archivo readme por error'
+rm README.md
+ echo 'salen estos numeros en morado porque se han modificado lineas respecto al repositorio'
+git reset HEAD --hard
+ls
+man 
+man ls
+echo 'man te muestra la ayuda'
+ls --help
+gitconfig--global user.name 'Elena'
+git config -- global user.name  'Elena Munoz'
+cd /
+cd /home
+git clone Repositorio Master KSchool
+git clone https://github.com/elenamunozmar/~Repositorio Master KSchool
+git clone https://github.com/elenamunozmar/Repositorio Master KSchool.git
+git clone https://github.com/elenamunozmar/master_kschool.git
+gitconfig--global user.name "Elena M"
+gitconfig ~ global user.name "Elena M"
+gitconfig ~global user.name "Elena M"
+git config ~ global user.name "Elena M"
+git config ~ global user.mail "elena.18.mm@gmail.com"
+git clone https://github.com/elenamunozmar/master_kschool.git 
+cat/.gitconfig
+cat .git/config
+ls -l
+git status
+cd 
+ git config ~ global user.name "Elena Munoz"
+ git config ~ global user.mail elena.18.mm@gmail.com 
+git config --global user.name "Elena Munoz"
+git config --global user.mail elena.18.mm@gmail.com
+git config --list
+cat .git/config
+ls -l
+git clone https://github.com/elenamunozmar/master_kschool.git
+ls -a
+git config --
+git --
+git donfig
+git config
+cat .gitconfig
+cd 
+gedit .config/
+gedit .gitconfig
+cat .gitonfig
+cat .gitconfig
+ls
+echo 'CREAMOS UN REPOSITORIO QUe SE LLAME REPOS'
+mkdir Repos
+cd Repos
+git clone https://github.com/elenamunozmar/master_kschool.git
+echo 'PARA USAR VIRGULILLA ~  -> ES ALT DERECHO + Ã�   O ALT DERECHO + 4'
+LS
+ls
+git clone https://github.com/elenamunozmar/master_kschool.git Otrodirectorio
+ls
+pwd
+cd /home/dsc/Pictures
+cd /home/dsc/Repos
+git clone https://github.com/elenamunozmar/master_kschool.git ../Pictures
+git clone https://github.com/elenamunozmar/master_kschool.git ../Pictures/Otro_directorio
+ls ../Pictures
+ls
+echo 'vamos a crear un repositorio con linea de comandos'
+git init
+git init master_class_local_start
+ll
+cd master_class_local_start
+git status
+echo 'el master nos indica que el directorio es un repositorio'
+cd ~
+cd Repos
+cd master_class_local_start
+ls -a
+echo 'Tenemos un directorio que se llama .git porque es donde esta todo el historial'
+echo 'Ahi es donde se guardan los cambios'
+touch first_file.txt
+ll
+gedit first_file.txt
+echo  'para salir del editor de texto hay primero que guardar ctrl+s y luego salir con ctrl+q'
+git add first_file.txt
+git status
+echo 'que este esten las letras en verde es que estÃ�n preparados'
+git status
+echo 'si no queremos meter el first_file... en un commit, hay que hacer git rm'
+touch second_file.txt
+git status
+ git add second_file.txt
+git status
+echo 'cuando queremos guardarlo o hacer un checkpoint, hay que hacer un commit'
+git commit  -m 'first commit'
+git config --global user.mail "elena.18.mm@gmail.com"
+git commit -m 'first commit'
+git config --globla user.name "Elena Munoz"
+git config --global user.mail "elena.18.mm@gmail.com"
+git config --global user.name "Elena Munoz" 
+git status
+git config
+git commit 'first commit'
+git commit -m 'first commit'
+git config --global user.mail "dsc@vm."
+git commit -m 'first commit'
+.git/config
+git config --global user.mail "elena.18.mm@gmail.com"
+git config --global user.name "Elena Munoz" 
+git status
+git commit -m 'first_commit'
+cd
+cat .gitconfig
+gedit .gitconfig
+cd -
+git commit -m 'first_commit'
+echo 'no me dejaba hacer el commit porque tenia user.mail en lugar de user.email'
+echo 'para arreglarlo nos metemos en el editor de texto (gedit .gitconfig) y cambios mail por email'
+echo 'vamos a crear un repositorio vacio en el github (en internet, no en local como hasta ahora)'
+echo 'ademas, vamos a sincronizar el git local con el github'
+echo 'primero se crea un repo vacio sin readme ni nada en github.com'
+git remote add origin https://github.com/elenamunozmar/local_git.git
+git remote add origin https://github.com/elenamunozmar/local_git.gi
+git remove -v
+git rm -v
+git remote -v
+echo 'remote -v te dice lo que estÃ� sincronizado ahora mismo'
+echo 'origin seria lo que tenemos en github y master seria lo que tenemos en local'
+git branch -M master
+git push -u origin master
+echo 'aunque la contraseña no se mueva, esta escribiendo'
+echo 'para traer los cambios o ver los cambios que ha hecho otra persona en el codigo, hay que hacer lo siguiente para verlo'
+cat .history
+cd 
+cat.history
+cd ~ 
+cat .history
+echo 'vamos a crear con las cosas de lineas de comandos, y vamos a ir metiendo lo de la linea de comando cada dos horas, por ejemplo'
+cd Repos
+git clone https://github.com/elenamunozmar/command_line_masterDS.git
+cd command_line_masterDS
+cp ~/.history
+cp --help
+cp ~/.history .
