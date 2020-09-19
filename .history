@@ -232,3 +232,79 @@ cd command_line_masterDS
 cp ~/.history
 cp --help
 cp ~/.history .
+echo 'cp es para copia -> cp + directorio de lo que copiamos + directorio de donde lo copiamos'
+echo 'como lo queriamos copiar donde estabamos ahora mismo, puede poner un punto solo'
+ll
+ls -a
+echo 'ahora que tenemos un fichero nuevo, tenemos que hacer el git add'
+git add .history
+git commit -m "first_5H_of_master"
+ls -a
+echo 'copy es para llevarlo al directorio y add lo que hace es aÃ±adirlo a la lista de archivos a los que se le van a trackear los cambios'
+echo 'es decir, una cosa es copiarla al directorio y otra es convertirla o aÃ±adirla al git, que es que le vamos a analizar los cambios en el repositorio git'
+echo 'vamos a hace rcambios sobre .history'
+gedit .history
+cat .history
+git reset --hard
+echo 'esto lo que hace es volver al ultimo commit'
+cat.history
+echo 'existe el archivo .history pero no lo estÃƒ trackeando porque hemos vuelto al ultimo commit'
+ls -a
+git push 
+echo 'con push lo subimos a github'
+echo 'ahora en nuestro repositorio estara el readme que creamos al ppo y el archivo .history que hemos copiado y trackeado'
+git commit -m "Date test $(date)"
+git log
+git push
+mkdir ~/first_dir
+cd
+cd first_dir
+touch Text_file.txt
+ls -a
+chmod --help
+chmod -R 776 Text_file.txt
+cat Text_file.txt
+ls -l
+mkdir ./sub1/sub2/sub3
+mkdir -p ./sub1/sub2/sub3     
+cd sub1/sub2/sub3
+cd ../
+cp ./Text_file.txt ./sub1
+cd sub1
+ls -a
+mv --help
+mv ./Text_file.txt  ./sub2/Text_file.txt.2
+cd ./sub2
+ls -a
+cp ../ ./sub3
+ls -a ./sub3
+cd ./sub3
+ls -a
+echo "Change file name of first_dir/sub2/text_file.txt.2 to first_dir/sub2/text_file.txt.backupâ€ƒ½\
+"
+ls -a ~/first_dir/sub1/sub2
+mv ~/first_dir/sub1/sub2/Text_file.txt.2 ~/first_dir/sub2/text_file.txt.backup     
+echo "â€ƒ¼first_dir/sub2/text_file.txt.backupâ€ƒ½ to â€ƒ¼first_dirâ€ƒ½ directory as hidden file"
+mv ~/first_dir/sub1/sub2/Text_file.txt.2 ~/first_dir/sub2/text_file.txt.backup     
+Ã§
+cd ../
+ls -a
+mv ./Text_file.txt.2 ./Text_file.txt.backup
+ls -a
+echo 'transformar el fichero a oculto'
+mv ./Text_file.txt.backup ./.Text_file.txt.backup
+ls -a
+echo 'para hacerlo como oculto se le aÃ±ade un punto al principio del nombre'
+rm -r sub2
+ll
+cd ../
+rm -r sub2
+ll
+cd
+cd Repos/command_line_masterDS
+cp ~/.history
+git add -u
+git commit -m "Quick exercise -->$(date)"
+cd ~
+ls -a
+cp ~/.history ~/Repos/command_line_masterDS
